@@ -10,22 +10,7 @@
         }
     });
 
-
-    // Smooth scrolling on the navbar links
-    $(".navbar-nav a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            
-            $('html, body').animate({
-                scrollTop: $(this.hash).offset().top - 45
-            }, 1500, 'easeInOutExpo');
-            
-            if ($(this).parents('.navbar-nav').length) {
-                $('.navbar-nav .active').removeClass('active');
-                $(this).closest('a').addClass('active');
-            }
-        }
-    });
+   
 
 
     // Typed Initiate
@@ -112,6 +97,25 @@
         loop: true,
         items: 1
     });
-    
+       // Smooth scrolling on the navbar links
+    $(".navbar-nav a").on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            
+            $('html, body').animate({
+                scrollTop: $(this.hash).offset().top - 45
+            }, 1500, 'easeInOutExpo');
+            
+            if ($(this).parents('.navbar-nav').length) {
+                $('.navbar-nav .active').removeClass('active');
+                $(this).closest('a').addClass('active');
+            }
+        }
+    });
 })(jQuery);
 
+ //Download CV
+
+    if ( ! Modernizr.adownload ) { var $link = $('a'); $link.each(function() { var $download = $(this).attr('download'); if (typeof $download !== typeof undefined && $download !== false) { var $el = $('<div>').addClass('download-instruction').text('Right-click and select "Download Linked File"'); $el.insertAfter($(this)); } }); }
+
+ 
